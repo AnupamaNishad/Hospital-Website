@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Appointment - Janani Hospital</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav style="background:#a82a4a; padding:15px; color:white; display:flex; justify-content:space-between;">
+<h2>Janani Hospital</h2>
+<div><a href="index.html" style="color:white; margin-right:10px;">Home</a><a href="about.html" style="color:white;">About</a></div>
+</nav>
+
+<div class="box" style="max-width:500px; margin:30px auto; padding:25px; background:white; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+<h2 style="text-align:center; color:#a82a4a;">Book Appointment</h2>
+
+<form id="myForm" style="display:flex; flex-direction:column; gap:18px; margin-top:20px;">
+
+<!-- 1. Name -->
+<div>
+<label>Patient Name</label>
+<input type="text" id="name" placeholder="Full Name" required style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; margin-top:5px;">
+</div>
+
+<!-- 2. DOB - Ye wala aap bol rahi thi -->
+<div>
+<label>Date of Birth</label>
+<input type="date" id="dob" required style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; margin-top:5px;">
+</div>
+
+<!-- 3. Phone -->
+<div>
+<label>Mobile Number</label>
+<input type="number" id="phone" placeholder="10 Digit Number" required style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; margin-top:5px;">
+</div>
+
+<!-- 4. Select Department / Services - Ye bhi tha -->
+<div>
+<label>Select Department Services</label>
+<select id="care" required style="width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; margin-top:5px;">
+<option value="">Select Service</option>
+<option value="General Checkup">General Checkup</option>
+<option value="Gynecology">Gynecology (Stri Rog)</option>
+<option value="Pediatrics">Child Care (Baal Rog)</option>
+<option value="Emergency">Emergency Care</option>
+<option value="ICU / NICU">ICU / NICU</option>
+</select>
+</div>
+
+<button type="submit" style="background:#a82a4a; color:white; padding:14px; border:none; border-radius:8px; font-size:16px; cursor:pointer;">Book Now</button>
+
+</form>
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var n = document.getElementById("name").value;
+    var d = document.getElementById("dob").value;
+    var p = document.getElementById("phone").value;
+    var c = document.getElementById("care").value;
+    
+    alert("Thank You " + n + "!\n\nDOB: " + d + "\nService: " + c + "\n\nJanani Hospital me aapka appointment confirm ho gaya. Hum aapko " + p + " par call karenge.");
+});
+</script>
+
+</body>
+</html>
